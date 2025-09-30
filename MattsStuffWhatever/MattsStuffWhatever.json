@@ -1,0 +1,41 @@
+{
+  "name" : "MattsStuffWhatever",
+  "jobMode" : "VISUAL",
+  "description" : "",
+  "role" : "arn:aws:iam::590186200215:role/Admin",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-590186200215-us-east-2/scripts/MattsStuffWhatever.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--extra-py-files" : "s3://aws-glue-studio-transforms-523021788118-gamma-us-east-2/misc/openpyxl.zip,s3://aws-glue-studio-transforms-523021788118-gamma-us-east-2/misc/et_xmlfile.zip",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-590186200215-us-east-2/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-observability-metrics" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-590186200215-us-east-2/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 480,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "5.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "codeGenConfigurationNodes" : "{\"node-1746209580034\":{\"S3ExcelSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"s3://80shiphop/Glue_Jobs_details_by_1743446292449.xlsx\"},\"Exclusions\":[],\"Name\":\"Amazon S3\",\"OutputSchemas\":[{\"Columns\":[{\"Name\":\"glue jobs details by visual mode\",\"Type\":\"string\"},{\"Name\":\"unnamed: 1\",\"Type\":\"string\"},{\"Name\":\"unnamed: 2\",\"Type\":\"string\"},{\"Name\":\"unnamed: 3\",\"Type\":\"string\"},{\"Name\":\"unnamed: 4\",\"Type\":\"string\"},{\"Name\":\"unnamed: 5\",\"Type\":\"string\"},{\"Name\":\"unnamed: 6\",\"Type\":\"string\"},{\"Name\":\"unnamed: 7\",\"Type\":\"string\"},{\"Name\":\"unnamed: 8\",\"Type\":\"string\"},{\"Name\":\"unnamed: 9\",\"Type\":\"string\"},{\"Name\":\"unnamed: 10\",\"Type\":\"string\"},{\"Name\":\"unnamed: 11\",\"Type\":\"string\"},{\"Name\":\"unnamed: 12\",\"Type\":\"string\"},{\"Name\":\"unnamed: 13\",\"Type\":\"string\"},{\"Name\":\"unnamed: 14\",\"Type\":\"string\"},{\"Name\":\"unnamed: 15\",\"Type\":\"string\"},{\"Name\":\"unnamed: 16\",\"Type\":\"string\"}]}],\"Paths\":[\"s3://80shiphop/Glue_Jobs_details_by_1743446292449.xlsx\"],\"Recurse\":true}},\"node-1746210176751\":{\"S3DirectTarget\":{\"AutoDataQuality\":{\"EvaluationContext\":\"EvaluateDataQuality_node1746209534315\",\"IsEnabled\":false},\"Compression\":\"none\",\"Format\":\"xml\",\"Inputs\":[\"node-1746209580034\"],\"Name\":\"Amazon S3\",\"NumberTargetPartitions\":\"10\",\"PartitionKeys\":[],\"Path\":\"s3://80shiphop\",\"SchemaChangePolicy\":{\"EnableUpdateCatalog\":false}}}}",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "scs-no-ipv6-stack-test",
+    "branch" : "main",
+    "folder" : "MattsStuffWhatever"
+  }
+}
